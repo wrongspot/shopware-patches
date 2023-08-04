@@ -1,0 +1,11 @@
+--- o/StockUpdater.php	2023-05-05 02:14:34
++++ m/StockUpdater.php	2023-08-04 08:45:43
+@@ -316,7 +316,7 @@
+ 
+         $update = new RetryableQuery(
+             $this->connection,
+-            $this->connection->prepare('UPDATE product SET available_stock = stock - :open_quantity, sales = :sales_quantity, updated_at = :now WHERE id = :id')
++            $this->connection->prepare('UPDATE product SET available_stock = stock , sales = :sales_quantity, updated_at = :now WHERE id = :id')
+         );
+ 
+         foreach ($fallback as $id) {
