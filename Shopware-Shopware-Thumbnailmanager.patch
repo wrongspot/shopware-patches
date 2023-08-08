@@ -1,0 +1,13 @@
+--- a/engine/Shopware/Components/Thumbnail/Manager.php
++++ b/engine/Shopware/Components/Thumbnail/Manager.php
+@@ -191,6 +191,10 @@
+ 
+         $thumbnails = [];
+ 
++        if ($type === null) {
++            return $thumbnails;
++        }
++
+         foreach ($sizes as $size) {
+             $suffix = $size['width'] . 'x' . $size['height'];
+ 
