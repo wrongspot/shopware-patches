@@ -1,0 +1,14 @@
+--- a/src/Resources/app/storefront/src/plugins/store-locator/src/shared/google-map.js	2023-03-08 16:55:50
++++ b/src/Resources/app/storefront/src/plugins/store-locator/src/shared/google-map.js	2023-08-25 10:19:18
+@@ -97,7 +97,10 @@
+                 + '&callback=window.NetiStoreLocatorMapInit'
+                 + languageParam;
+ 
+-            script.type = 'text/javascript';
++            // script.type = "text/javascript";
++            script.type = 'text/plain';
++            script.setAttribute('data-cookieconsent', 'marketing')
++
+             document.head.appendChild(script);
+ 
+             resolve();
